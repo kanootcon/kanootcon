@@ -85,18 +85,24 @@ nav a {
     border-radius: 4px; /* Optional: rounds the corners of the border */
 }
 /* Add more styles as needed... */
+#countdown {
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 20px;
+}
 
+#countdown-text {
+    margin-bottom: 10px;
+}
 
+#countdown-timer span {
+    font-weight: bold;
+}
 
-
-
-
-
-
-
-
-
-
+#seconds {
+    color: #ff0000; /* Initial color of seconds */
+    transition: color 0.3s ease-in-out; /* Smooth color transition */
+}
 #victory-points {
     background-color: #ffffff;
     border: 1px solid #ddd;
