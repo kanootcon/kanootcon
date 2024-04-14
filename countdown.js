@@ -1,28 +1,49 @@
-function updateCountdown() {
-    const targetTime = new Date(Date.UTC(2024, 3, 20, 7, 0, 0)); // Month is 0-indexed, 3 means April
-    const currentTime = new Date();
-    const timeDifference = targetTime - currentTime;
+document.addEventListener('DOMContentLoaded', function() {
+    const countdownElement = document.getElementById('countdown');
+    const daysSpan = document.getElementById('days');
+    const hoursSpan = document.getElementById('hours');
+    const minutesSpan = document.getElementById('minutes');
+    const secondsSpan = document.getElementById('seconds');
+    const postMessageElement = document.getElementById('post-countdown-message');
+    const waitingImage = document.getElementById('waiting-image');
 
-    const days = document.getElementById('days');
-    const hours = document.getElementById('hours');
-    const minutes = document.getElementById('minutes');
-    const seconds = document.getElementById('seconds');
+    const eventDate = new Date(Date.UTC(2024, 3, 20, 7, 0, 0)); // April 20th, 2024, 9:00 AM UTC+2
 
-    if (timeDifference >= 0) {
-        days.textContent = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        hours.textContent = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
-        minutes.textContent = Math.floor((timeDifference / (1000 * 60)) % 60);
-        seconds.textContent = Math.floor((timeDifference / 1000) % 60);
+    function updateCountdown() {
+        const now = new Date();
+        const timeDifference = eventDate - now;
 
-        // Toggle color of seconds for visual tick
-        seconds.style.color = seconds.style.color === 'red' ? 'blue' : 'red'; // Change colors as needed
-    } else {
-        document.getElementById('countdown-text').textContent = "The date has passed!";
-        document.getElementById('countdown-timer').style.display = 'none';
+        if (timeDifference <= 0) {
+            // Stop the countdown and display the event live message
+            countdownElement.style.display = 'none'; // Hide the countdown
+            postMessageElement.textContent = 'KanootCon is Live!';
+            postMessageElement.style.display = 'block';
+            waitingImage.style.display = 'none'; // Hide the waiting image
+			clearInterval(updateInterval); // Stop the interval
+            return; // Exit the function
+        }
+
+        // Continue updating countdown
+        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDifference / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((timeDifference / (1000 * 60)) % 60);
+        const seconds = Math.floor((timeDifference / 1000) % 60);
+
+        daysSpan.textContent = days;
+        hoursSpan.textContent = hours;
+        minutesSpan.textContent = minutes;
+        secondsSpan.textContent = seconds;
+
+        // Toggle color for seconds
+        if (seconds % 2 === 0) {
+            secondsSpan.className = 'countdown-number red';
+        } else {
+            secondsSpan.className = 'countdown-number blue';
+        }
+
+        waitingImage.style.display = 'block'; // Ensure the waiting image is visible during countdown
     }
-}
 
-// Update the countdown every second
-setInterval(updateCountdown, 1000);
-
-document.addEventListener('DOMContentLoaded', updateCountdown);
+    let updateInterval = setInterval(updateCountdown, 1000);
+	updateCountdown(); // Immediately update on load
+});
