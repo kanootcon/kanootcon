@@ -9,31 +9,37 @@
 </head>
 <body>
     <header class="content-block">
-		<a href="index.html">
-			<img src="images/blakanoterna.png" alt="KanootCon 2024 Logo" id="logo-image">
-		</a>
-		<h1>Welcome to KanootCon 2024 - TOW edition</h1>
+        <a href="index.html">
+            <img src="images/blakanoterna.png" alt="KanootCon 2024 Logo" id="logo-image">
+        </a>
+        <h1>Welcome to KanootCon 2024 - TOW edition</h1>
     </header>
-<nav>
-    <ul>
-		<li><a id="nav-army-lists" href="army-lists.html#start-of-content">Army Lists</a></li>
-		<li><a id="nav-victory-points" href="external-resources.html#start-of-content">External Resources</a></li>
-		<li><a id="nav-rules" href="rules.html#start-of-content">Rules</a></li>		
-		<li><a id="nav-home" href="schedule.html#start-of-content">Schedule</a></li>
-		<li><a id="nav-victory-points" href="victory-points.html#start-of-content">Victory Points</a></li>
-    </ul>
-</nav>
-	<div id="countdown"></div>
-		<div id="countdown">
-		<div id="countdown-text"><strong>Countdown to KanootCon 2024!</strong></div>
-		<div id="countdown-timer">
-			<span id="days"></span> days,
-			<span id="hours"></span> hours,
-			<span id="minutes"></span> minutes,
-			<span id="seconds"></span> seconds.
-		</div>
-		</div>
-	<script src="countdown.js"></script>
-	<script src="scripts.js"></script>
+    <nav>
+        <ul>
+            <li><a id="nav-army-lists" href="army-lists.html#start-of-content">Army Lists</a></li>
+            <li><a id="nav-external-resources" href="external-resources.html#start-of-content">External Resources</a></li>
+            <li><a id="nav-rules" href="rules.html#start-of-content">Rules</a></li>
+            <li><a id="nav-schedule" href="schedule.html#start-of-content">Schedule</a></li>
+            <li><a id="nav-victory-points" href="victory-points.html#start-of-content">Victory Points</a></li>
+        </ul>
+    </nav>
+
+<!-- Countdown Timer -->
+	<div id="countdown" style="text-align: center; font-size: 1.5em;">
+		<span id="days" class="countdown-number"></span><span class="countdown-label"> days, </span>
+		<span id="hours" class="countdown-number"></span><span class="countdown-label"> hours, </span>
+		<span id="minutes" class="countdown-number"></span><span class="countdown-label"> minutes, </span>
+		<span id="seconds" class="countdown-number"></span><span class="countdown-label"> seconds.</span>
+	</div>
+
+
+    <!-- Waiting Image -->
+    <img id="waiting-image" src="images/waiting.png" alt="Waiting for KanootCon" style="display: none; width: 100%; max-width: 600px; margin: 20px auto;">
+
+    <!-- Post-Countdown Message -->
+    <div id="post-countdown-message" style="text-align: center; display: none; font-size: 1.5em;">KanootCon is Live!</div>
+
+    <script src="countdown.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
