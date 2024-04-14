@@ -217,3 +217,33 @@ nav a.active {
     color: #000F30; /* A darker color for contrast */
     text-decoration: underline; /* To make it stand out */
 }
+
+/* Army List Specific Styles */
+.army-list h1, .army-list h2, .army-list h3 {
+    color: #000F30;  /* Dark blue color for headers */
+	text-align: center;
+}
+
+.army-list p, .army-list li {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333; /* Dark grey color for text */
+}
+
+.army-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.army-list li {
+    margin-bottom: 5px;
+}
+
+.army-list .unit {
+    background-color: #ffffff; /* White background for unit blocks */
+    border-left: 5px solid #ddd; /* Grey border for distinction */
+    padding: 10px;
+    margin-bottom: 10px;
+	font-family: Arial, sans-serif;
+    color: #333;
+}
