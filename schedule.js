@@ -1,4 +1,3 @@
-// Update the 'schedule.js' file to include:
 document.addEventListener('DOMContentLoaded', function () {
     // Define the schedule and corresponding images
     const scheduleItems = [
@@ -6,33 +5,45 @@ document.addEventListener('DOMContentLoaded', function () {
         { start: '12:30', end: '13:15', image: 'Lunch.png' },
         { start: '13:15', end: '17:00', image: 'Game2.png' },
         { start: '17:00', end: '17:45', image: 'Dinner.png' },
-        { start: '17:45', end: '21:30', image: 'Game3.png' }
+        { start: '17:45', end: '21:30', image: 'Game3.png' },
+        { start: '21:30', end: '08:30', image: 'post930.png' }
     ];
 
-    // Function to update the schedule based on the current time
     function updateSchedule() {
         const now = new Date();
-        const currentTime = now.getHours() * 60 + now.getMinutes();
+        let currentTime = now.getHours() * 60 + now.getMinutes(); // Current time in minutes since midnight
+
         let activeFound = false;
 
-        for (let i = 0; i < scheduleItems.length; i++) {
-            const item = scheduleItems[i];
+        scheduleItems.forEach((item, index) => {
             const startTime = parseInt(item.start.split(':')[0]) * 60 + parseInt(item.start.split(':')[1]);
-            const endTime = parseInt(item.end.split(':')[0]) * 60 + parseInt(item.end.split(':')[1]);
+            let endTime = parseInt(item.end.split(':')[0]) * 60 + parseInt(item.end.split(':')[1]);
 
-            if (currentTime >= startTime && currentTime <= endTime) {
-                document.getElementById('schedule-image').src = 'images/' + item.image;
-                document.getElementById('schedule-table').rows[i].classList.add('active');
+            // Adjust for events that span past midnight
+            if (endTime < startTime) {
+                if (currentTime >= startTime || currentTime < endTime) {
+                    // We are currently in a period that spans past midnight
+                    displayActivity(item, index);
+                    activeFound = true;
+                }
+            } else if (currentTime >= startTime && currentTime < endTime) {
+                // Normal condition where event does not span past midnight
+                displayActivity(item, index);
                 activeFound = true;
             } else {
-                document.getElementById('schedule-table').rows[i].classList.remove('active');
+                document.getElementById('schedule-table').rows[index].classList.remove('active');
             }
-        }
+        });
 
         // If no active slot is found, clear the image
         if (!activeFound) {
             document.getElementById('schedule-image').src = '';
         }
+    }
+
+    function displayActivity(item, index) {
+        document.getElementById('schedule-image').src = 'images/' + item.image;
+        document.getElementById('schedule-table').rows[index].classList.add('active');
     }
 
     // Run the function every minute
