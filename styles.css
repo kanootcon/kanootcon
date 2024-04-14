@@ -85,6 +85,12 @@ nav a {
     border-radius: 4px; /* Optional: rounds the corners of the border */
 }
 /* Add more styles as needed... */
+#post-countdown-message {
+    font-size: 1,5em; /* Match your h2 size */
+    font-weight: bold; /* Assuming your h2s are bold */
+    text-align: center;
+    display: none; /* Starts hidden */
+}
 #countdown {
     font-size: 1.5em;
     text-align: center;
@@ -98,10 +104,18 @@ nav a {
 #countdown-timer span {
     font-weight: bold;
 }
+.countdown-number {
+    font-weight: bold;
+}
 
-#seconds {
-    color: #ff0000; /* Initial color of seconds */
-    transition: color 0.3s ease-in-out; /* Smooth color transition */
+.countdown-label {
+    font-weight: normal; /* Explicitly normal if your default body text is not */
+}
+.red {
+    color: #ff0000; /* Red color */
+}
+.blue {
+    color: #0000ff; /* Blue color */
 }
 #victory-points {
     background-color: #ffffff;
@@ -135,20 +149,6 @@ nav a {
     background-color: #4CAF50; /* Change to your preferred highlight color */
     color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #rules {
     background-color: #ffffff;
     border: 1px solid #ddd;
