@@ -182,6 +182,23 @@ nav a {
         margin: 10px auto; /* Less margin on smaller devices */
         max-width: 95%; /* Use percentage for max-width for better control */
     }
+	
+    body {
+        font-size: 14px; /* Smaller font size for better readability on small screens */
+    }
+
+    .results table {
+        width: 100%; /* Ensures full width */
+        overflow-x: auto; /* Makes table scrollable on x-axis on small devices */
+		display: block;
+    }
+
+    .results h2 {
+        font-size: 16px; /* Smaller headings for small screens */
+    }
+    .results h3 {
+        font-size: 15px; /* Smaller headings for small screens */
+    }
 }
 
 /* Media query for mobile devices */
@@ -206,7 +223,7 @@ nav a {
     }
 
     /* Adjust table styles for small screens */
-    #schedule-table, #victory-points-table {
+    #schedule-table, #victory-points-table, #resultsTable table {
         width: 100%; /* Full width for better visibility */
         /* You might want to add more styles to make tables scroll horizontally on small screens */
     }
@@ -246,4 +263,60 @@ nav a.active {
     margin-bottom: 10px;
 	font-family: Arial, sans-serif;
     color: #333;
+}
+/* Tournament Results Specific Styles */
+
+.results body { 
+    font-family: Arial, sans-serif; 
+    margin: 20px; 
+}
+
+.results table {
+    width: 100%;
+    overflow-x: auto; /* Allows horizontal scrolling */
+    display: table; /* Makes the table a block element to enable scrolling */
+}
+
+.results th, 
+.results td { 
+    border: 1px solid #ddd; 
+    padding: 8px; 
+    text-align: left;
+	
+}
+.results h1, .results h2, .results h3 {
+    color: #000F30;  /* Dark blue color for headers */
+	text-align: center;
+}
+.results th { 
+    background-color: #f2f2f2; 
+}
+
+.results .winner { 
+    background-color: #32de84; /* Green */ 
+}
+
+.results .first { 
+    background-color: #32de84; /* Lighter Green */ 
+}
+
+.results .second { 
+    background-color: #90ee90; /* Lighter Green */ 
+}
+
+.results .third { 
+    background-color: #C8E6C9; /* Even Lighter Green */ 
+}
+
+.results .loser { 
+    background-color: #f08080; /* Light red */ 
+}
+
+.results .draw { 
+    background-color: #add8e6; /* Light blue */ 
+}
+
+.results { 
+    background-color: #ffffff; /* White background for the block */
+    overflow-x: auto; 
 }
