@@ -149,6 +149,38 @@ nav a {
     background-color: #4CAF50; /* Change to your preferred highlight color */
     color: white;
 }
+#first-pairing {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#first-pairing-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#first-pairing-table td, #first-pairing-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#first-pairing-table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+#first-pairing-table tr:nth-child(even) {
+    background-color: #e7e7e7;
+}
+
+#first-pairing-table tr.active {
+    background-color: #4CAF50; /* Change to your preferred highlight color */
+    color: white;
+}
 #rules {
     background-color: #ffffff;
     border: 1px solid #ddd;
