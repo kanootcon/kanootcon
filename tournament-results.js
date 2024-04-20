@@ -119,7 +119,7 @@ function displayLeaderboard() {
 // First round
 
 updateResults([
-     { player1: 'Mattias', score1: 7, vp1: 200, player2: 'Cyp', score2: 13, vp2: 600 },
+     { player1: 'Mattias B', score1: 7, vp1: 200, player2: 'Cyp', score2: 13, vp2: 600 },
 	 { player1: 'Grendal', score1: 9, vp1: 530, player2: 'Erik', score2: 11, vp2: 761 },
 	 { player1: 'Snoken', score1: 17, vp1: 1022, player2: 'Svensken', score2: 3, vp2: 126 },
 	 { player1: 'El Presidente', score1: 13, vp1: 680, player2: 'Stian', score2: 7, vp2: 292 },
@@ -129,11 +129,11 @@ updateResults([
 // Second round
 /*
 updateResults([
-     { player1: 'El Presidente', score1: 8, vp1: 200, player2: 'Morten', score2: 12, vp2: 350 },
-	 { player1: 'Snoken', score1: 8, vp1: 200, player2: 'Simpa', score2: 12, vp2: 350 },
-	 { player1: 'Grendal', score1: 8, vp1: 200, player2: 'Erik', score2: 12, vp2: 350 },
-	 { player1: 'Robin', score1: 6, vp1: 200, player2: 'Svensken', score2: 14, vp2: 350 },
-     { player1: 'Cyp', score1: 10, vp1: 200, player2: 'Stian', score2: 10, vp2: 220 }
+     { player1: 'El Presidente', score1: 8, vp1: 200, player2: 'Erik', score2: 12, vp2: 350 },
+	 { player1: 'Snoken', score1: 15, vp1: 722, player2: 'Cyp', score2: 5, vp2: 0 },
+	 { player1: 'Grendal', score1: 3, vp1: 0, player2: 'Morten', score2: 17, vp2: 881 },
+	 { player1: 'Mattias B', score1: 6, vp1: 200, player2: 'Svensken', score2: 14, vp2: 350 },
+     { player1: 'Simpa', score1: 12, vp1: 718, player2: 'Stian', score2: 8, vp2: 366 }
 ]);
 */
 
