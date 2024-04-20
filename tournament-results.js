@@ -142,7 +142,7 @@ updateResults([
      { player1: 'El Presidente', score1: 14, vp1: 760, player2: 'Simpa', score2: 6, vp2: 205 },
 	 { player1: 'Cyp', score1: 19, vp1: 1162, player2: 'Erik', score2: 1, vp2: 0 },
 	 { player1: 'Grendal', score1: 20, vp1: 1349, player2: 'Mattias B', score2: 0, vp2: 0 },
-	 { player1: 'Morten', score1: 19, vp1: 1297, player2: 'Snoken', score2: 1, vp2: 63 },
+	 { player1: 'Morten', score1: 17, vp1: 1012, player2: 'Snoken', score2: 3, vp2: 63 },
      { player1: 'Stian', score1: 16, vp1: 927, player2: 'Svensken', score2: 4, vp2: 90 }
 ]);
 
